@@ -21,6 +21,10 @@ function ProfileCard({
             <Text style={styles.title}>{name}</Text>
             {listings && <Text style={styles.subtitle}>{listings}</Text>}
           </View>
+          <MaterialCommunityIcons
+            name={"chevron-down"}
+            size = {25}
+            color= {colors.dark}/>
         </View>
       </TouchableHighlight>
     </Swipeable>

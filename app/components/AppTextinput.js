@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import {MaterialCommunityIcons} from "@expo/vector-icons"
 
 
+
 import colors from '../config/colors'
 import  defaultStyles from '../config/styles'
 
@@ -18,7 +19,7 @@ export default function AppTextinput({icon, ...otherProps}) {
             size = {25}
             color= {colors.dark}
             style ={styles.icon}
-        />}
+        /> }
 
         <TextInput sytle={defaultStyles.text} {...otherProps} />
         

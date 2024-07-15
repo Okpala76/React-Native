@@ -20,19 +20,22 @@ function AppButton({children,colorr,onPress}) {
 const styles = StyleSheet.create({
     container: {
         margin: 10,
-        width: "100%",
-        alignItems: "cover",
-        borderRadius: 50,
+        width: "95%",
+        justifyContent:"center",
+        //alignItems: "center",
+        borderRadius: 25,
         overflow: "hidden"
+        
+
     },
     text: {
         color: colors.white,
 
     }
-    //button: {
+
 
     }
 
 
 )
-export default Login;
+export default AppButton;

@@ -5,6 +5,8 @@
     "name": "Gochi",
     "slug": "Gochi",
     "version": "1.0.0",
+    "platform": ["ios", "andriod"],
+    "jsEngine": "hermes",
     "orientation": "default",
     "icon": "./app/assets/icon.png",
     "userInterfaceStyle": "light",
