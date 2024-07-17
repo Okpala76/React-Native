@@ -18,7 +18,7 @@ function Cardi({ title, subtitle ,image }) {
           >{title}
           
         </Card.Title>
-        <Text style={styles.text}>
+        <Text style={styles.text} numberOfLines={numberOfLines}>
           {subtitle}
         </Text>
 

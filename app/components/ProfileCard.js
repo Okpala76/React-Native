@@ -1,15 +1,20 @@
+
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableHighlight } from 'react-native';
 import { Swipeable } from 'react-native-gesture-handler';
 import colors from '../config/colors';
 
-function ProfileCard({ 
-  profileImage, 
-  name, 
-  listings, 
-  onPress, 
-  renderRightActions, 
-  IconImage 
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+function ProfileCard({
+  profileImage,
+  name,
+  listings,
+  onPress,
+  renderRightActions,
+  IconImage,
+  showChevrons,
+  numberOfLines
 }) {
   return (
     <Swipeable renderRightActions={renderRightActions}>
@@ -18,13 +23,19 @@ function ProfileCard({
           {IconImage}
           {profileImage && <Image source={profileImage} style={styles.image} />}
           <View style={styles.detailsContainer}>
-            <Text style={styles.title}>{name}</Text>
-            {listings && <Text style={styles.subtitle}>{listings}</Text>}
+            <Text style={styles.title} numberOfLines={numberOfLines}>{name}</Text>
+            {listings && <Text style={styles.subtitle } numberOfLines= {numberOfLines} >{listings}</Text>}
           </View>
-          <MaterialCommunityIcons
-            name={"chevron-down"}
-            size = {25}
-            color= {colors.dark}/>
+
+          {showChevrons && (
+            <View style={styles.chevronContainer}>
+              <MaterialCommunityIcons
+                name={"chevron-down"}
+                size={25}
+                color={colors.dark}
+              />
+            </View>
+          )}
         </View>
       </TouchableHighlight>
     </Swipeable>
@@ -34,12 +45,10 @@ function ProfileCard({
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    height:"100",
-    width:"100%",
-    padding:10,
-    backgroundColor: colors.white,
-    
-    
+    padding: 10,
+    backgroundColor: colors.light,
+    alignItems: 'center',
+    paddingTop: 50 // Ensures all items are centered vertically
   },
   image: {
     width: 70,
@@ -47,16 +56,23 @@ const styles = StyleSheet.create({
     borderRadius: 35,
   },
   detailsContainer: {
+    flex: 1,
     marginLeft: 10,
     justifyContent: 'center',
-    fontWeight:"bold"
   },
   title: {
     fontWeight: '500',
+    
   },
   subtitle: {
     color: '#6e6969',
+   
   },
+  chevronContainer: {
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+
+  }
 });
 
 export default ProfileCard;

@@ -19,6 +19,7 @@ export default function AppTextinput({icon, ...otherProps}) {
             size = {25}
             color= {colors.dark}
             style ={styles.icon}
+
         /> }
 
         <TextInput sytle={defaultStyles.text} {...otherProps} />
@@ -38,7 +39,8 @@ const styles = StyleSheet.create({
     },
 
     icon:{
-        margin: 10
+        margin: 10,
+        borderRadius: 25,
 
     },
 

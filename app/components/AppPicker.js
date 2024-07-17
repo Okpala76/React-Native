@@ -6,7 +6,7 @@ import {MaterialCommunityIcons} from "@expo/vector-icons"
 import colors from '../config/colors'
 import Screen from './Screen'
 import AppText from './AppText'
-import PickerItem from './PickerItem'
+import CategoryItem from './CategoryItem'
 
 
 
@@ -58,13 +58,18 @@ export default function AppPicker({icon, selectedItems,onSelectedItems, items, p
           title = "Close"
           onPress={() => setModalVisible(false)}
         />
-
+        
+          
         <FlatList
           data={items}
           keyExtractor={(item) => item.value.toString()}
+          numColumns={3}
           renderItem={({item }) => 
-            <PickerItem
-              label= {item.label}
+            <CategoryItem
+              name= {item.label}
+              icon = {item.icon}
+              backgroundColor= {item.backgroundColor}
+
               onPress={() => 
                 {setModalVisible(false)
                  onSelectedItems(item) 
@@ -74,6 +79,7 @@ export default function AppPicker({icon, selectedItems,onSelectedItems, items, p
             />
           }
         />
+       
 
       
       </Screen>
@@ -88,7 +94,7 @@ export default function AppPicker({icon, selectedItems,onSelectedItems, items, p
 const styles = StyleSheet.create({
     container:{
         backgroundColor: colors.light,
-        borderRadius: 0,
+        borderRadius: 25,
         flexDirection: "row",
         width: " 100%",
         padding: 15,
