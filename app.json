@@ -1,11 +1,12 @@
-
-
 {
   "expo": {
     "name": "Gochi",
     "slug": "Gochi",
     "version": "1.0.0",
-    "platform": ["ios", "andriod"],
+    "platform": [
+      "ios",
+      "andriod"
+    ],
     "jsEngine": "hermes",
     "orientation": "default",
     "icon": "./app/assets/icon.png",
@@ -25,8 +26,9 @@
       }
     },
     "web": {
-      "favicon": "./app/assets/favicon.png"
+      "favicon": "./app/assets/favicon.png",
+      "bundler": "metro"
     }
-  }
+  },
+  "name": "gochi"
 }
-

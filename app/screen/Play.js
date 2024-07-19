@@ -1,19 +1,18 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+ import React from 'react';
+ import {  StyleSheet } from 'react-native';
+
+ import ListEditScreen from './ListEditScreen';
 
 
-import ProfileCard from '../components/ProfileCard'
 
-export default function Play() {
+function Play() {
+
   return (
-    <View>
-
-      <ProfileCard
-        profileImage = {require("../assets/mosh.jpg")}
-        name = "Merkel"
-        showChevrons = {true}
-      />
-    </View>
-    
-  )
+    <ListEditScreen/>
+  );
 }
+
+
+
+
+export default Play;
