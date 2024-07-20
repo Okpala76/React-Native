@@ -22,13 +22,13 @@ function CategoryItem({ name, icon, backgroundColor,onPress }) {
 
 const styles = StyleSheet.create({
   container: {
-      width: 100,
-      height:100,
+      flex:1,
       borderRadius:50,
       justifyContent: 'center',
       alignItems: 'center',
       margin: 20,
       marginBottom: 10,
+      backgroundColor:"yellow"
       
   },
   text: {

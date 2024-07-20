@@ -6,6 +6,9 @@ import {SubmitButton,AppForm,AppFormField } from '../components/forms'
 import Screen from '../components/Screen'
 import AppFormPicker from '../components/forms/AppFormPicker';
 import FormImagePicker from '../components/forms/FormImagePicker';
+import useLocation from '../hooks/useLocation';
+
+
 
 
 
@@ -30,8 +33,8 @@ const categories = [
 
 
 export default function ListEditScreen() {
+  const location = useLocation();
 
-  //Yup validator
 
   return (
     <Screen style={styles.screen}>
@@ -43,7 +46,7 @@ export default function ListEditScreen() {
               category: null,
               images:[],
             }}
-            onSubmit = { values => console.log(values)}
+            onSubmit = { values => console.log(location)}
             validationSchema = {validationSchema}
             >
               <FormImagePicker name = "images" />
@@ -60,7 +63,7 @@ export default function ListEditScreen() {
                 />
               </View>
 
-              <View style={{width:"40%"}}>
+              <View style={{width:"100%"}}>
 
                 <AppFormField
                     autoCapitalize ="none"
@@ -73,7 +76,7 @@ export default function ListEditScreen() {
                 />
               </View>
 
-              <View style={{width:"60%"}}>
+              <View style={{width:"100%"}}>
 
                   <AppFormPicker
                   icon={"format-list-bulleted"}

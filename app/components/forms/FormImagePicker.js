@@ -4,6 +4,7 @@ import { useFormikContext } from 'formik';
 
 import AppImageInputList from '../imagePick/AppImageInputList';
 import ErrorMessage from './ErrorMessage';
+import { LocationAccuracy, LocationActivityType } from 'expo-location';
 
 
 

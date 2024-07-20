@@ -1,4 +1,4 @@
-import { View, StyleSheet, TouchableWithoutFeedback, Modal, Button,FlatList } from 'react-native'
+import { View, StyleSheet, TouchableWithoutFeedback, Modal, Button,FlatList, SafeAreaView } from 'react-native'
 import React, {useState} from 'react'
 import {MaterialCommunityIcons} from "@expo/vector-icons"
 
@@ -53,13 +53,15 @@ export default function AppPicker({icon, selectedItems,onSelectedItems, items, p
     <Modal
        visible={modalVisible}
        animationType='slide'>
+
       <Screen>
         <Button
           title = "Close"
           onPress={() => setModalVisible(false)}
         />
         
-          
+        <View style={{flex:1}}>
+
         <FlatList
           data={items}
           keyExtractor={(item) => item.value.toString()}
@@ -80,9 +82,10 @@ export default function AppPicker({icon, selectedItems,onSelectedItems, items, p
           }
         />
        
+        </View>
 
       
-      </Screen>
+        </Screen >
 
     </Modal>
 
