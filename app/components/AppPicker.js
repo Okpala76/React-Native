@@ -60,7 +60,7 @@ export default function AppPicker({icon, selectedItems,onSelectedItems, items, p
           onPress={() => setModalVisible(false)}
         />
         
-        <View style={{flex:1}}>
+        
 
         <FlatList
           data={items}
@@ -82,7 +82,7 @@ export default function AppPicker({icon, selectedItems,onSelectedItems, items, p
           }
         />
        
-        </View>
+        
 
       
         </Screen >
