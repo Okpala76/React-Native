@@ -51,7 +51,7 @@ export default function ListEditScreen() {
             >
               <FormImagePicker name = "images" />
 
-              <View style={{width:"100%"}}>
+              <View style={{width:90}}>
                 <AppFormField
                     autoCapitalize ="none"
                     autoCorrect={false}

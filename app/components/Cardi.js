@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Card } from 'react-native-elements';
 
-function Cardi({ title, subtitle ,image }) {
+function Cardi({ title, subtitle ,image, numberOfLines}) {
   return (
     <View style={styles.container}>
       <Card containerStyle={styles.cardContainer} >
@@ -32,8 +32,8 @@ function Cardi({ title, subtitle ,image }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //justifyContent: "center",
-    ///alignItems: "center"
+    justifyContent: "center",
+    alignItems: "center"
 
 
   },

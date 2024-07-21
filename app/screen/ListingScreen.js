@@ -31,6 +31,7 @@ export default function ListingScreen() {
                     title = {item.title}
                     subtitle = {"$"+item.price}
                     image = {item.image}
+                    
                 />
 
                 
