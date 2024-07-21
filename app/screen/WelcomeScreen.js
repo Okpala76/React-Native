@@ -1,11 +1,17 @@
 import React from "react"
 import styles from "./Styles";
 import { View,ImageBackground, Image,Text} from 'react-native';
-import Login from "../components/Login";
+import { useNavigation } from '@react-navigation/native';
+
+
+import AppButton from "../components/AppButton";
+
 
 
 
   export default function WelcomeScreen() {
+    const navigation = useNavigation();
+    
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -25,16 +31,16 @@ import Login from "../components/Login";
           
           <View
           style={{
-            flex: 0.15,
-            alignitem: "center",  
-            width: "100%",
-            padding: 20
+          flex: 0.15,
+          alignitem: "center",  
+          width: "100%",
+          padding: 20
 
               
             }}
             >
-              <Login colorr= "tomato">LOGIN</Login>
-              <Login colorr= "orange">LOGIN</Login>
+              <AppButton colorr= "tomato" onPress={() => navigation.navigate("LoginScreen")} >LOGIN</AppButton>
+              <AppButton colorr= "orange" onPress={() => navigation.navigate("RegisterScreen")}  >REGISTER</AppButton>
               
     
           </View>

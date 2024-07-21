@@ -4,8 +4,16 @@
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
- import Screen from '../components/Screen';
 
+
+
+ import Screen from '../components/Screen'; 
+ import WelcomeScreen from './WelcomeScreen';
+ import LoginScreen from "./LoginScreen";
+ import RegisterScreen from './RegisterScreen';
+
+
+ 
  const Link = () => {
   const navigation = useNavigation();
     return (
@@ -17,70 +25,43 @@ import {MaterialCommunityIcons} from '@expo/vector-icons'
     )
   }
 
-
-const Tweets = () => (
-  <Screen>
-    <Text> Tweets</Text>
-    <Link/>
-  </Screen>
-)
-
-const TweetDetails = ({route}) => (
-  <Screen>
-  <Text> Tweets Details {route.params.id} </Text>
-</Screen>
-)
-
 const Stack = createStackNavigator();
-const StackNavigator = () => (
+const AuthNavigator = () => (
   <Stack.Navigator
     screenOptions={{
       headerStyle: {backgroundColor:"dodgerblue"},
       headerTintColor:"white",
+      headerShown:false,
+
 
     }}
   >
-    <Stack.Screen name= "Tweets" component={Tweets} />
     <Stack.Screen 
-      name= "TweetDetails" 
-      component={TweetDetails}
-      options= {{
-      }}
+      name= "WelcomeScreen" 
+      component={WelcomeScreen} 
+
     />
+    <Stack.Screen 
+      name= "LoginScreen" 
+      component={LoginScreen} 
+
+    />
+    <Stack.Screen 
+      name= "RegisterScreen" 
+      component={RegisterScreen} 
+
+    />
+   
+
   </Stack.Navigator>
 )
 
-
-const Account = () => <Screen><Text>Account</Text></Screen>
-
-const Tab = createBottomTabNavigator();
-const TabNavigator = () => (
-  <Tab.Navigator
-    screenOptions = {{
-      tabBarInactiveBackgroundColor: "white",
-      tabBarActiveTintColor: "tomato"
-      
-    }}
-  >
-    <Tab.Screen name = "Feed" component = {StackNavigator}/>
-    <Tab.Screen 
-      name = "Account"  
-      component = {Account}
-      options={{
-        tabBarLabel: 'Home',
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="home" color={color} size={size} />
-        ),
-      }}
-      />
-  </Tab.Navigator>
-)
 
 
 function Play() {
   return (
     <NavigationContainer>
-      <TabNavigator/>
+      <AuthNavigator/>
     </NavigationContainer>
     
   );
