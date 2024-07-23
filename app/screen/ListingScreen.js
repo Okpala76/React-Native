@@ -1,50 +1,58 @@
-import { View, FlatList, StyleSheet } from 'react-native'
-import React from 'react'
+import { View, FlatList, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import Constants from "expo-constants";
+
+import listingsApi from "../api/listings";
+import routes from '../navigation/routes';
+import Cardi from '../components/Cardi';
+import AppText from '../components/AppText';
+import AppButton from '../components/AppButton';
+import ActivityIndicator from '../components/ActivityIndicator';
+import useApi from '../hooks/useApi';
 
 
-import Cardi from '../components/Cardi'
+
+export default function ListingScreen({ navigation }) {
+
+    const {data:listings, error, loading, request:loadListings} = useApi(listingsApi.getListings)
+
+    useEffect(() => {
+        loadListings();
+    }, []);
 
 
-const lisings =[
-    {
-        title: "Slick Red Jacket ",
-        price: "100",
-        image: require("../assets/jacket.jpg")
+    return (
+        <View style={styles.container}>
+            {error && (
+                <>
+                    <AppText>Couldn't retrieve the listings</AppText>
+                    <AppButton children="retry" onPress={loadListings} />
+                </>
+            )}
 
-    },
-    {
-        title: "Couch in Great Condition ",
-        price: "1000",
-        image: require("../assets/couch.jpg")
+            <ActivityIndicator visible={loading} />
 
-    },
-]
-
-export default function ListingScreen() {
-  return (
-    <View style={styles.container}>
-        <FlatList
-            data = {lisings}
-            keyExtractor={(list) => {list.title}}
-            renderItem= {({item}) => 
-                <Cardi
-                    title = {item.title}
-                    subtitle = {"$"+item.price}
-                    image = {item.image}
-                    
+            {!loading && (
+                <FlatList
+                    data={listings}
+                    keyExtractor={(list) => list.title}
+                    renderItem={({ item }) => 
+                        <Cardi
+                            title={item.title}
+                            subtitle={"$" + item.price}
+                            imageUrl={item.images[0].url}
+                            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
+                        />
+                    }
                 />
-
-                
-            }
-        />
-    </View>
-  )
+            )}
+        </View>
+    );
 }
 
-
 const styles = StyleSheet.create({
-    container:{
-        paddding:0
+    container: {
+        paddingTop: Constants.statusBarHeight,
+        flex: 1,  
     }
-    
-})
+});

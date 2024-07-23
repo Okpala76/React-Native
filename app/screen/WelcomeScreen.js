@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 
 import AppButton from "../components/AppButton";
+import routes from "../navigation/routes";
 
 
 
@@ -39,8 +40,8 @@ import AppButton from "../components/AppButton";
               
             }}
             >
-              <AppButton colorr= "tomato" onPress={() => navigation.navigate("LoginScreen")} >LOGIN</AppButton>
-              <AppButton colorr= "orange" onPress={() => navigation.navigate("RegisterScreen")}  >REGISTER</AppButton>
+              <AppButton colorr= "tomato" onPress={() => navigation.navigate(routes.LOGIN)} >LOGIN</AppButton>
+              <AppButton colorr= "orange" onPress={() => navigation.navigate(routes.REGISTER)}  >REGISTER</AppButton>
               
     
           </View>

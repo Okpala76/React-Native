@@ -1,3 +1,5 @@
+
+
 import * as Location from  "expo-location"
 import  {useState, useEffect} from 'react'
 
@@ -34,4 +36,3 @@ const useLocation = () => {
 
 export default useLocation;
 
-//requestForegroundPermissionsAsync 

@@ -1,13 +1,16 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Card } from 'react-native-elements';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-function Cardi({ title, subtitle ,image, numberOfLines}) {
+function Cardi({ title, subtitle ,imageUrl, numberOfLines ,onPress}) {
   return (
+    <TouchableWithoutFeedback onPress = {onPress}>
+
     <View style={styles.container}>
       <Card containerStyle={styles.cardContainer} >
 
-        <Card.Image source={image} />
+        <Card.Image source={{uri: imageUrl}} />
         <Card.Divider />
 
       <View>
@@ -26,6 +29,7 @@ function Cardi({ title, subtitle ,image, numberOfLines}) {
 
       </Card>
     </View>
+    </TouchableWithoutFeedback>
   );
 }
 

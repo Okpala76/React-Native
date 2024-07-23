@@ -5,6 +5,7 @@ import colors from '../config/colors'
 import ProfileCard from '../components/ProfileCard'
 import AppIcon from '../components/AppIcon'
 import ListItemSeparator from '../components/ListItemSeparator'
+import routes from '../navigation/routes'
 
 const menuitem = [
     {
@@ -19,12 +20,14 @@ const menuitem = [
         icon: {
             name: "email",
             backgroundColor: colors.dodgerblue,
-        }
+        },
+        targetScreen: routes.MESSAGESSCREEN
     },
+    
 ]
 
 
-export default function AccountScreen() {
+export default function AccountScreen({navigation}) {
 
 
   return (
@@ -36,17 +39,11 @@ export default function AccountScreen() {
         <ProfileCard 
             profileImage={require("../assets/mosh.jpg")}
             name={"Mosh Hamedani"}
-            listings={"Programswith" }
+            listings={"Programs with" }
         />
         </View>
 
-        <View style={{
-            marginVertical:30,
-            marginTop: 40,
-            backgroundColor:colors.danger
-        
-
-        }}>
+        <View style={{marginVertical: 20}}>
 
         <FlatList 
             data={menuitem}
@@ -60,15 +57,15 @@ export default function AccountScreen() {
                         <AppIcon
                             name = {item.icon.name}
                             backgroundColor ={item.icon.backgroundColor}
-                        />
-                    } 
-                
+                        /> } 
+                    onPress ={() => navigation.navigate(item.targetScreen)}
                 /> 
              )}  
        
         />
-
         </View>
+
+        
 
         <ProfileCard
             name= {"Log Out"}

@@ -4,9 +4,6 @@ import * as Yup from "yup";
 
 import {SubmitButton,AppForm,AppFormField } from '../components/forms'
 import Screen from '../components/Screen'
-import { Ionicons } from '@expo/vector-icons';
-
-import AppFormPicker from '../components/forms'
 
 
 export default function RegisterScreen() {

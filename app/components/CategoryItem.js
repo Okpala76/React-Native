@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
-import Screen from './Screen';
+
 
 function CategoryItem({ name, icon, backgroundColor,onPress }) {
   return (

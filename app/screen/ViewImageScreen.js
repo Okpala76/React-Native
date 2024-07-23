@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./Styles";
-import {Text,View,Image,ImageBackground} from 'react-native';
+import {View,ImageBackground} from 'react-native';
 //import colors from "../config/colors";
 import {MaterialCommunityIcons} from "@expo/vector-icons";
 

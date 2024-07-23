@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: colors.light,
     alignItems: 'center',
-    paddingTop: 50 // Ensures all items are centered vertically
+    paddingTop: 10 // Ensures all items are centered vertically
   },
   image: {
     width: 70,
