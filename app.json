@@ -23,13 +23,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.gochi_s.Gochi"
     },
     "web": {
       "favicon": "./app/assets/favicon.png",
       "bundler": "metro"
     },
-    "sdkVersion": "51.0.0"
+    "sdkVersion": "51.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "f4a888f6-7fee-453b-adee-379d3e7d2df6"
+      }
+    }
   },
   "name": "gochi"
 }

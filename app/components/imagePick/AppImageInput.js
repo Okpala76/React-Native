@@ -45,7 +45,6 @@ function AppImageInput({imageUri, onChangeImage}) {
     } catch (error) {
       console.log('Error reading image', error)
     }
-
   };
 
   return (

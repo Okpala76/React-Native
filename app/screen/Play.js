@@ -1,26 +1,26 @@
- import React from 'react';
+import React from 'react';
 import { NavigationContainer} from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-
-
 import navigationTheme from '../navigation/navigationTheme';
 import TabNavigator from '../navigation/AppNavigator';
+import Appnetwork from '../components/Appnetwork';
 
 
 
-
-function Play() {
+export default function Play() {
   return (
+    <>
+    <Appnetwork/>
     <GestureHandlerRootView style={{ flex: 1 }}>
     <NavigationContainer theme = {navigationTheme}>
       <TabNavigator/>
     </NavigationContainer>
     </GestureHandlerRootView>
+    
+    </>
   );
-}
+};
 
 
 
-
-export default Play;

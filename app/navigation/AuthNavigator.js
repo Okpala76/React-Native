@@ -1,12 +1,12 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import {useNavigation } from '@react-navigation/native';
+
 import WelcomeScreen from '../screen/WelcomeScreen';
 import LoginScreen from '../screen/LoginScreen';
 import RegisterScreen from '../screen/RegisterScreen';
 
 
-const navigation = useNavigation();
+
 
 const Stack = createStackNavigator();
 

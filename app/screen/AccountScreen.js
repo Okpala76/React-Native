@@ -28,8 +28,6 @@ const menuitem = [
 
 
 export default function AccountScreen({navigation}) {
-
-
   return (
     <View style = {{
         backgroundColor: colors.light,
