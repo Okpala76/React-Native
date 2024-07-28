@@ -9,7 +9,7 @@ function Appnetwork(props) {
 
   return (
     <View style = {styles.button}>
-      <Button  title = {'No Network Available'} disabled = {!netInfo.isInternetReachable}  color={"tomato"}/>
+      {!netInfo.isInternetReachable && <Button  title = {'No Network Available'}  color={"tomato"}/>}
     </View>
   );
 }

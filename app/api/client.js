@@ -6,7 +6,7 @@ const apiClient1 = create({
 });
 
 const apiClient2 = create({
-  baseURL: 'http://192.168.201.177:9000/api'
+  baseURL: 'http://192.168.185.177:9000/api'
 });
 
 const get = apiClient2.get;
@@ -21,7 +21,7 @@ apiClient2.get = async (url, params,axiosConfig) => {
   }
 
   const data = await cache.get(url);
-  return {ok: true, data};
+  return data ? {ok: true, data} : response;
 }
 
 export default {
