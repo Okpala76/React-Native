@@ -1,11 +1,12 @@
 import { View, FlatList } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 
 import colors from '../config/colors'
 import ProfileCard from '../components/ProfileCard'
 import AppIcon from '../components/AppIcon'
 import ListItemSeparator from '../components/ListItemSeparator'
 import routes from '../navigation/routes'
+import AuthContext from "../auth/context"
 
 const menuitem = [
     {
@@ -28,6 +29,8 @@ const menuitem = [
 
 
 export default function AccountScreen({navigation}) {
+const {user, setUser} = useContext(AuthContext);
+
   return (
     <View style = {{
         backgroundColor: colors.light,
@@ -36,8 +39,8 @@ export default function AccountScreen({navigation}) {
         <View>
         <ProfileCard 
             profileImage={require("../assets/mosh.jpg")}
-            name={"Mosh Hamedani"}
-            listings={"Programs with" }
+            name={user.name}
+            listings={user.email}
         />
         </View>
 
@@ -71,8 +74,8 @@ export default function AccountScreen({navigation}) {
                 <AppIcon
                     name = {"logout"}
                     backgroundColor ={"#ffe66d"}
-                />
-            } 
+                />} 
+            onPress = {() => setUser(null)}    
                 
         />
 
