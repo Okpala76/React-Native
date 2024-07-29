@@ -9,19 +9,19 @@
     ],
     "jsEngine": "hermes",
     "orientation": "default",
-    "icon": "./app/assets/icon.png",
+    "icon": "./app/assets/splash.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./app/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#e63c4b"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./app/assets/adaptive-icon.png",
+        "foregroundImage": "./app/assets/splash.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.gochi_s.Gochi"
@@ -35,7 +35,10 @@
       "eas": {
         "projectId": "f4a888f6-7fee-453b-adee-379d3e7d2df6"
       }
-    }
+    },
+    "plugins": [
+      "expo-secure-store"
+    ]
   },
   "name": "gochi"
 }

@@ -1,12 +1,13 @@
 import { View, FlatList } from 'react-native'
-import React, { useContext } from 'react'
+import React from 'react'
 
 import colors from '../config/colors'
 import ProfileCard from '../components/ProfileCard'
 import AppIcon from '../components/AppIcon'
 import ListItemSeparator from '../components/ListItemSeparator'
 import routes from '../navigation/routes'
-import AuthContext from "../auth/context"
+
+import useAuth from '../auth/useAuth'
 
 const menuitem = [
     {
@@ -28,8 +29,11 @@ const menuitem = [
 ]
 
 
+
 export default function AccountScreen({navigation}) {
-const {user, setUser} = useContext(AuthContext);
+const {user, LogOut} = useAuth();
+
+
 
   return (
     <View style = {{
@@ -75,7 +79,8 @@ const {user, setUser} = useContext(AuthContext);
                     name = {"logout"}
                     backgroundColor ={"#ffe66d"}
                 />} 
-            onPress = {() => setUser(null)}    
+             onPress = {() => LogOut()}
+                
                 
         />
 

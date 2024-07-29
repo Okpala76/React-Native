@@ -2,16 +2,16 @@ import { useState } from "react";
 import listingsApi from "../api/listings";
 
 
-export default useApi = () => {
+export default useApi = (apiFunc) => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
 
 
 
-    const request = async () => {
+    const request = async (...args) => {
         setLoading(true);
-        const response = await listingsApi.getListings();
+        const response = await apiFunc(...args);
         setLoading(false);
 
         if (!response.ok) return setError(true);
