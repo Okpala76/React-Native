@@ -22,6 +22,10 @@ export default function ListingScreen({ navigation }) {
 
 
     return (
+        <>
+        
+        
+        <ActivityIndicator visible={loading} />
         <View style={styles.container}>
             {error && (
                 <>
@@ -30,7 +34,6 @@ export default function ListingScreen({ navigation }) {
                 </>
             )}
 
-            <ActivityIndicator visible={loading} />
 
             {!loading && (
                 <FlatList
@@ -47,6 +50,7 @@ export default function ListingScreen({ navigation }) {
                 />
             )}
         </View>
+        </>
     );
 }
 

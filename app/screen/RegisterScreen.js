@@ -8,6 +8,7 @@ import usersApi from '../api/users';
 import useAuth from '../auth/useAuth';
 import authApi from '../api/auth';
 import useApi from '../hooks/useApi';
+import ActivityIndicator from '../components/ActivityIndicator';
 
 //Yup validator
 const validationSchema = Yup.object().shape({
@@ -19,13 +20,14 @@ const validationSchema = Yup.object().shape({
 
 
 export default function RegisterScreen() {
-  
+  const registerApi = useApi(usersApi.register)
+  const loginApi = useApi(authApi.login)
   const auth = useAuth();
   const [error, setError] = useState();
 
 
   const handleSubmit = async (userInfo) => {
-    const result = await usersApi.register(userInfo);
+    const result = await registerApi.request(userInfo);
 
     if (!result.ok) {
       if (result.data) console.log("error");
@@ -36,7 +38,7 @@ export default function RegisterScreen() {
       return;
     }
 
-    const { data: authToken } = await authApi.login(
+    const { data: authToken } = await loginApi.request(
       userInfo.email,
       userInfo.password
     );
@@ -44,7 +46,10 @@ export default function RegisterScreen() {
   };
 
   return (
+    <>
+    <ActivityIndicator visible= {registerApi.loading || loginApi.loading}/>
     <Screen style={styles.screen}>
+      
       <AppForm
         initialValues={{ email: '', name: '', password: '' }}
         onSubmit={handleSubmit}
@@ -83,6 +88,7 @@ export default function RegisterScreen() {
         <SubmitButton color="red" title="Register" />
       </AppForm>
     </Screen>
+    </>
   );
 }
 

@@ -16,6 +16,7 @@ function Appnetwork(props) {
 
 const styles = StyleSheet.create({
   button: {
+    position: 'absolute',
     paddingTop: Constants.statusBarHeight,
     width: '100%',
     zIndex:1,
