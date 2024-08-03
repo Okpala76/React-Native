@@ -9,7 +9,7 @@
     ],
     "jsEngine": "hermes",
     "orientation": "default",
-    "icon": "./app/assets/splash.png",
+    "icon": "./app/assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./app/assets/splash.png",
@@ -34,11 +34,18 @@
     "extra": {
       "eas": {
         "projectId": "f4a888f6-7fee-453b-adee-379d3e7d2df6"
+      },
+      "bugsnag": {
+        "apiKey": "4378d4ae1fcecbbf8f6b52453cd13dab"
       }
     },
     "plugins": [
       "expo-secure-store"
     ]
-  },
-  "name": "gochi"
+    },
+    "updates": {
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
+    }
 }

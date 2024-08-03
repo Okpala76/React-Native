@@ -1,4 +1,8 @@
 import {useImageDimensions} from '@react-native-community/hooks'
+import Bugsnag from '@bugsnag/expo'
+Bugsnag.start();
+Bugsnag.notify()
+
 
 const source = require('Midjourney.png')
 

@@ -11,6 +11,7 @@ import Appnetwork from '../components/Appnetwork';
 import AuthNavigator from '../navigation/AuthNavigator';
 import AuthContext from '../auth/context'
 import useSplash from '../hooks/useSplash';
+import logger from '../utility/logger';
 
 
 

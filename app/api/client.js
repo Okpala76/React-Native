@@ -2,13 +2,15 @@ import { create } from 'apisauce';
 import cache from '../utility/cache'
 
 import authStorage from "../auth/storage"
+import settings from '../config/settings';
+
 
 const apiClient1 = create({
-  baseURL: 'http://192.168.201.177:3000'
+  baseURL: settings.apiUrl 
 });
 
 const apiClient2 = create({
-  baseURL: 'http://192.168.83.177:9000/api'
+  baseURL: settings.apiUrl
 });
 
 
