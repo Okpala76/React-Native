@@ -7,6 +7,8 @@ import {
   Text,
   Alert,
 } from 'react-native';
+
+
 import ProfileCard from '../components/ProfileCard';
 import { AppForm, AppFormField, SubmitButton } from '../components/forms';
 import * as Yup from 'yup';
@@ -14,7 +16,7 @@ import {
   usePushNotifications,
   sendPushNotification,
 } from '../hooks/usePushNotification';
-import send from '../api/messages';
+import messagesAPi from '../api/messages';
 
 const validationSchema = Yup.object().shape({
   message: Yup.string().required().label('Message'),
@@ -28,7 +30,7 @@ function Listing_Deats({ route }) {
     const body = userInfo.message;
     const data = { screen: 'Listing_Deats' };
 
-    const result = await send(userInfo.message, listing.id);
+    const result = await messagesAPi.send(userInfo.message, listing.id);
 
     if (!result.ok) {
       console.log('Error', result);
