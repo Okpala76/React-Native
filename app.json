@@ -27,7 +27,7 @@
       "package": "com.gochi_s.Gochi"
     },
     "web": {
-      "favicon": "./app/assets/favicon.png",
+      "favicon": "./app/assets/icon.png",
       "bundler": "metro"
     },
     "sdkVersion": "51.0.0",
